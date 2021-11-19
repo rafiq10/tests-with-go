@@ -137,3 +137,33 @@ func TestHandler1(t *testing.T) {
 	}
 }
 ```
+
+### Useful error messages:
+
+The goal of useful error mesage is to tell what went wrong in the test.
+It should be meaning for the debugging.
+
+```go
+    t.Errorf("SomeFunction(%v) err = %v; wanted: %v)
+
+    t.Fatalf(http.NewRequest(%s,%s,nil) err = %v; wanted: %v",http.MethodGet,"\\",err.Error(),"somethingDesired")
+
+```
+
+Kind of standard way to deal with testing:
+```go
+    if got != wanted{
+        // do stuff
+    } 
+```
+
+If the object is too big, it might have sense to print only important properties:
+```go
+err  SomeFunc(p)
+if err != nil{
+    t.Fatalf("SmeFunc(name=%s, age=%d)", p.Name, p.Age)
+} 
+```
+
+```go
+```
