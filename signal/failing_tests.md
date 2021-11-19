@@ -24,4 +24,10 @@ When using subsets (not recommended), Fatal becomes much easier to use.
 
 ## Examples of Fatal vs Error
 
-./signal1_test.go
+```go
+func TestHandler(t *testing.T) {
+	t.Log("plain log message")             // works like fmt.Print
+	t.Logf("message with number: %d", 123) // works like fmt.Printf
+
+}
+```
