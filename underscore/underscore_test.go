@@ -1,8 +1,10 @@
 package underscore
 
-import "testing"
+import (
+	"testing"
+)
 
-func TestCamel(t *testing.T) {
+func TestCamel_first(t *testing.T) {
 	arg := "thisIsCamelCaseString"
 	want := "this_is_camel_case_string"
 	got := Camel(arg)
@@ -32,4 +34,24 @@ func TestCamel_simple(t *testing.T) {
 		}
 	}
 
+}
+
+func TestCamel(t *testing.T) {
+	type args struct {
+		inp string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Camel(tt.args.inp); got != tt.want {
+				t.Errorf("Camel() = %v, want %v", got, tt.want)
+			}
+		})
+	}
 }
